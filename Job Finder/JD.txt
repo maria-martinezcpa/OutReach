@@ -1,0 +1,116 @@
+Kairos Power Logo
+Back to jobs
+Senior BIM Designer/Specialist, Civil Structures
+Alameda, CA or Remote in US
+Company Overview
+
+Kairos Power is a new nuclear energy technology and engineering company whose mission is to enable the world’s transition to clean energy, with the ultimate goal to dramatically improve people’s quality of life while protecting the environment. This goal will be accomplished through the commercialization of the fluoride-salt-cooled, high-temperature reactor (FHR) that can be deployed with robust safety, affordable costs, and flexible operation to accommodate the expansion of variable renewables.
+
+Job Summary 
+
+Kairos Power is seeking a highly motivated and experienced BIM Senior Engineer I, Civil Structures with a strong background in Revit to lead the implementation and management of Building Information Modeling (BIM) for our diverse civil structures projects. The ideal candidate will be an expert in leveraging Revit for structural modeling while possessing a comprehensive understanding of the broader civil infrastructure digital toolkit. You will be responsible for driving the development and enforcement of our BIM standards, with a special focus on Revit-centric workflows, managing the BIM process from project inception to completion, and ensuring the successful integration of digital delivery across our civil engineering teams. 
+
+Responsibilities 
+
+Develop, implement, and maintain the company's BIM strategy, with a primary focus on robust Revit standards and workflows for civil structures.   
+Champion the adoption of BIM technologies across all civil engineering disciplines, ensuring seamless integration between Revit and other platforms like Civil 3D.   
+Establish and manage a Common Data Environment (CDE) for all project information, ensuring Revit models and data are central to the project ecosystem.  
+Oversee the BIM process on multiple civil structures projects, from initial planning and design through to construction and as-built documentation, ensuring Revit models are accurately developed and maintained throughout the project lifecycle.   
+Develop and manage project-specific BIM Execution Plans (BEPs), clearly defining Revit modeling standards, Level of Development (LOD) requirements, and collaboration procedures.   
+Lead interdisciplinary coordination using federated models, with a strong emphasis on the structural Revit model as a key source of truth.   
+Manage and lead clash detection and resolution meetings, utilizing Navisworks to coordinate Revit models with designs from other disciplines.  
+Serve as the in-house expert for Revit Structure, providing advanced technical guidance and troubleshooting for project teams.   
+Lead the development and maintenance of a comprehensive library of standardized Revit families and content specifically for civil structural elements (e.g., bridge components, retaining walls, culverts, foundations).  
+Provide expert support on other key software, including Autodesk Civil 3D, Navisworks, and InfraWorks, while ensuring optimal interoperability with Revit.   
+Mentor project teams on best practices for Revit modeling, work-sharing, and data management.  
+Supervise and mentor a team of BIM coordinators and modelers, with a focus on elevating their Revit skills.   
+Develop and deliver customized training programs to enhance the Revit proficiency of all civil engineering staff, from basic principles to advanced modeling techniques.   
+Foster a culture of continuous improvement and knowledge sharing, particularly around Revit and digital innovation.  
+Ensure all BIM deliverables, especially Revit models, meet the required level of accuracy, detail, and quality as defined by project and company standards.  
+Conduct regular, rigorous quality control reviews of Revit models and associated documentation.   
+Stay current with the latest versions of Revit, industry add-ins, and emerging BIM technologies and standards, such as ISO 19650.  
+Partners with stakeholders to understand project requirements, specifications, and objectives.  
+Collaborate with civil structural, electrical, and mechanical engineers to integrate utilities, power supplies, and infrastructure into the layout design.   
+Generate 2D and 3D layout drawings, as well as associated documentation and reports, to communicate design concepts and implementation guidelines.   
+Collaborate with cross-functional teams, including engineering, procurement, and construction, to ensure seamless coordination and alignment during project execution.   
+Conduct periodic reviews of existing plant layouts to identify opportunities for optimization, efficiency enhancement, and cost reduction.   
+Stay updated with industry trends, emerging technologies, and best practices in plant layout design and material handling systems.  
+Perform other related duties as assigned. 
+Qualifications 
+
+Bachelor's degree in Civil Engineering, Structural Engineering, Construction Management, or a related field.   
+Minimum of 7-10 years of experience in the AECO industry, with at least 5 years in a dedicated BIM management or coordination role focused on structural or civil projects.   
+Expert-level proficiency in Autodesk Revit Structure is essential, with a demonstrable portfolio of complex projects.   
+Experience with Autodesk Navisworks for coordination and clash detection.   
+Proven experience in creating and managing advanced Revit families, parameters, and templates.   
+Experience in nuclear or regulated environments is a plus. 
+Background and experience must include drafting/ designer experience in engineering fields, such as electrical, mechanical, structural, communications, architectural, fire protection or civil  
+Preferred Qualifications  
+
+Master's degree in a relevant field.   
+Professional Engineer (PE) license.   
+Experience with other BIM and reality capture software (e.g., AVEVA 3D, Bentley OpenRoads, OpenBridge, Recap, ReCap Pro).   
+Familiarity with data management and collaboration platforms such as BIM 360/Autodesk Construction Cloud.   
+Experience with Dynamo for Revit to automate tasks and enhance workflows.   
+Experience with 4D (scheduling) and 5D (cost estimation) BIM processes.   
+Autodesk Certified Professional (ACP) in Revit or other relevant industry certifications. 
+Knowledge, Skills, and Abilities 
+
+Solid working knowledge of Autodesk Civil 3D and an understanding of how it interfaces with Revit for civil infrastructure projects.   
+Strong proficiency in Autodesk Navisworks for coordination and clash detection.   
+Excellent communication, leadership, and interpersonal skills.   
+Strong problem-solving and analytical abilities with a keen eye for detail.  
+Strong understanding of spatial planning, material flow optimization, and equipment placement principles.   
+Effective communication and interpersonal skills to collaborate with multidisciplinary teams and stakeholders. 
+Ability to work with highly collaborative team.
+Ability to solve problems quickly and efficiently.
+Prioritizes and ensures safety of one self and others. 
+Ability to proactively collect, manage and transfer knowledge.
+Ability to seek different and novel ways to create efficiencies when working on problems, challenges and issues 
+Physical Demands 
+
+Ascending or descending ladders, stairs, scaffolding, ramps, scissor lifts, articulated boom lifts and the like 
+Remaining in a stationary position for prolonged periods 
+Moving about to accomplish tasks or moving from one worksite to another 
+Communicating with others to exchange information 
+Environmental Conditions 
+
+General office environment 
+Assessing the accuracy, neatness and thoroughness of the work assigned 
+High-concentration, demanding and fast-paced 
+Safety and PPE 
+
+Reading and interpreting hazardous warning signs 
+Reporting issues with equipment or unsafe conditions 
+ Travel 
+
+ Some travel may be required (up to 10%) 
+ Certification 
+
+Professional Engineer (PE) license is preferred but not required. 
+Autodesk Certified Professional (ACP) in Revit or other relevant industry certifications is preferred but not required. 
+Additional Requirements 
+
+Occasionally requires working weekends  
+Occasionally requires schedule flexibility 
+Occasionally requires extended hours to support launch and critical project timelines 
+The salary range for this position is $140,000 to $165,400 for employees working onsite at our Alameda, CA headquarters. The range provided in this job posting represents the typical range or starting rate of candidates hired in California. Factors that may be used to determine your actual salary may include your education, experience, knowledge, skills, abilities, the market data for your work location, and a comparison to other employees already in the role.
+
+
+#LI-Remote
+
+About our Benefits
+
+We know that we have some of the most talented and dedicated employees, and we believe in rewarding them accordingly. If you work here, full-time employees (excludes interns) expect to have access to the benefits below:
+
+Competitive compensation packages
+Medical, dental and vision benefits for employees and their dependents
+Paid Vacation
+401(k) and pre-tax health insurance, dependent care, and commuter benefits (FSA)
+Kairos Power is committed to building a diverse workforce that reflects the communities where we do business. Kairos Power is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, national origin, genetics, disability, age, or veteran status. We actively welcome people of different experiences, abilities, and perspectives.
+
+Kairos Power participates in E-Verify.
+
+Candidates only, no recruiters or agencies please.
+
+Note: You are applying for a position that is located in a facility that handles information that is subject to export control restrictions by the Department of Energy under 10 CFR Part 810. To work in this facility, you need to be authorized by the Department of Energy to access Part 810-controlled information. Foreign nationals who are citizens of countries that are not on the Department of Energy’s general authorization list (link below) are not permitted to work in our facility unless the Department of Energy issues an export control license to the company to permit that individual to have access to Part 810-controlled information. The following questions are intended to determine the licensing requirements that may apply. https://www.law.cornell.edu/cfr/text/10/appendix-A_to_part_810

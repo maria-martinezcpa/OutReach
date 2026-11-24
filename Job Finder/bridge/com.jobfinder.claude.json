@@ -1,0 +1,9 @@
+{
+  "name": "com.jobfinder.claude",
+  "description": "Job Finder: tailor resumes with Claude Code",
+  "path": "D:\\working\\Projects\\Job Finder\\bridge\\native-host.bat",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://ldlhcfkbplimkhpmbidnlbnigkajhcok/"
+  ]
+}

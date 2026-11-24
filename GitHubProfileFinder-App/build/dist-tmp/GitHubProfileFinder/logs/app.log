@@ -1,0 +1,9 @@
+2026-10-06 10:31:09,353 [INFO] uvicorn.error: Started server process [19144]
+2026-10-06 10:31:09,353 [INFO] uvicorn.error: Waiting for application startup.
+2026-10-06 10:31:09,666 [WARNING] app: No GitHub token configured: GitHub allows only 60 requests/hour without one
+2026-10-06 10:31:09,672 [INFO] uvicorn.error: Application startup complete.
+2026-10-06 10:31:09,674 [INFO] uvicorn.error: Uvicorn running on http://127.0.0.1:60818 (Press CTRL+C to quit)
+2026-10-06 10:31:09,678 [INFO] desktop: Backend running on http://127.0.0.1:60818
+2026-10-06 10:31:16,583 [INFO] uvicorn.error: Shutting down
+2026-10-06 10:31:16,692 [INFO] uvicorn.error: Waiting for background tasks to complete. (CTRL+C to force quit)
+2026-10-06 10:31:34,247 [INFO] httpx: HTTP Request: GET https://api.github.com/search/topics?q=is%3Afeatured&page=1&per_page=100 "HTTP/1.1 200 OK"

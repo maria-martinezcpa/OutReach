@@ -1,0 +1,98 @@
+[
+  {
+    "user_id": 230513,
+    "username": "trashgod",
+    "reputation": 206180,
+    "location": "United States",
+    "github_url": "https://github.com/trashgod",
+    "profile_url": "https://stackoverflow.com/users/230513/trashgod"
+  },
+  {
+    "user_id": 165673,
+    "username": "Yarin",
+    "reputation": 186649,
+    "location": "New York, NY",
+    "github_url": "https://github.com/ykessler",
+    "profile_url": "https://stackoverflow.com/users/165673/yarin"
+  },
+  {
+    "user_id": 419970,
+    "username": "Raynos",
+    "reputation": 170077,
+    "location": "San Francisco, CA, United States",
+    "github_url": "https://github.com/raynos",
+    "profile_url": "https://stackoverflow.com/users/419970/raynos"
+  },
+  {
+    "user_id": 445131,
+    "username": "Eric Leschinski",
+    "reputation": 155703,
+    "location": "Northeast, USA",
+    "github_url": "https://github.com/sdmg15/best-websites-a-programmer-should-visit",
+    "profile_url": "https://stackoverflow.com/users/445131/eric-leschinski"
+  },
+  {
+    "user_id": 51197,
+    "username": "Adam Matan",
+    "reputation": 138353,
+    "location": "Greater Boston Area",
+    "github_url": "https://github.com/adamatan/adamatan",
+    "profile_url": "https://stackoverflow.com/users/51197/adam-matan"
+  },
+  {
+    "user_id": 4482,
+    "username": "Ben Hoffstein",
+    "reputation": 103673,
+    "location": "New York, New York United States",
+    "github_url": "http://github.com/hoffstein",
+    "profile_url": "https://stackoverflow.com/users/4482/ben-hoffstein"
+  },
+  {
+    "user_id": 241536,
+    "username": "John Dibling",
+    "reputation": 102002,
+    "location": "Chicago, IL",
+    "github_url": "https://github.com/jdibling/",
+    "profile_url": "https://stackoverflow.com/users/241536/john-dibling"
+  },
+  {
+    "user_id": 4086,
+    "username": "Ferruccio",
+    "reputation": 101248,
+    "location": "Boston, MA",
+    "github_url": "https://github.com/ferruccio",
+    "profile_url": "https://stackoverflow.com/users/4086/ferruccio"
+  },
+  {
+    "user_id": 1329652,
+    "username": "Kuba hasn&#39;t forgotten Monica",
+    "reputation": 99539,
+    "location": "United States",
+    "github_url": "https://github.com/kubao/stackoverflown",
+    "profile_url": "https://stackoverflow.com/users/1329652/kuba-hasnt-forgotten-monica"
+  },
+  {
+    "user_id": 1074592,
+    "username": "Brigand",
+    "reputation": 86468,
+    "location": "Arizona",
+    "github_url": "http://github.com/brigand",
+    "profile_url": "https://stackoverflow.com/users/1074592/brigand"
+  },
+  {
+    "user_id": 953482,
+    "username": "Kevin",
+    "reputation": 76504,
+    "location": "New Jersey",
+    "github_url": "https://github.com/kms70847",
+    "profile_url": "https://stackoverflow.com/users/953482/kevin"
+  },
+  {
+    "user_id": 471795,
+    "username": "kanaka",
+    "reputation": 73759,
+    "location": "Arlington, TX, United States",
+    "github_url": "http://github.com/kanaka",
+    "profile_url": "https://stackoverflow.com/users/471795/kanaka"
+  }
+]

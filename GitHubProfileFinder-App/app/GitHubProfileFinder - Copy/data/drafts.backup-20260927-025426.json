@@ -1,0 +1,26 @@
+{
+  "app": "gmail",
+  "custom_url": "https://kevincasey48@outlook.com",
+  "signature": "",
+  "templates": [
+    {
+      "id": "default",
+      "name": "Default",
+      "subject": "This is the first template That I Make!",
+      "body": "Hi {first_name},\n\nIt’s nice to meet you! I realize we haven’t met before, so I hope you don’t mind me reaching out.\nI came across your GitHub profile and your work on {repo} ({skill}).\n\nMy name is Maria, and I’m reaching out because I’m currently developing an early-stage business idea that I believe could create an opportunity for people to earn additional income without requiring a significant upfront investment.\n\nSince the idea is still in its early stages, I’m especially interested in getting a professional perspective from someone with experience in the field. I’d really appreciate the opportunity to briefly share the concept, hear your thoughts, and learn how you see its potential, as well as any practical challenges I should consider.\n\nIf you’re available, I’d be grateful for the opportunity to have a short call or meeting at a time that works for you. I’m happy to work around your schedule.\n\nThank you for taking the time to read my message. I hope we have an opportunity to speak.\n\nBest regards,\n"
+    },
+    {
+      "id": "bim_tool",
+      "name": "BIM tool proposal",
+      "subject": "BIM tool: would you like to help build it?",
+      "body": "Hi {first_name},\n\nI came across your GitHub profile and your work on {repo}. Your experience with {skill} is exactly the kind of background I'm looking for.\n\nI'm building [a BIM tool: one or two sentences on what it does and who it's for, e.g. \"a Revit add-in that automates clash reports for small architecture firms\"].\n\nI'm looking for a developer to help build it, mainly [what you need, e.g. \"the Revit API integration and IFC export\"]. I'm open to a paid contract or a revenue share, and happy to talk about what works best for you.\n\nIf that sounds interesting, just reply and I'll send more details. And if not, no problem at all. Thanks for reading.\n\nBest regards,\n"
+    },
+    {
+      "id": "gis_tool",
+      "name": "GIS tool proposal",
+      "subject": "GIS tool: would you like to help build it?",
+      "body": "Hi {first_name},\n\nI came across your GitHub profile and your work on {repo}. Your experience with {skill} is exactly the kind of background I'm looking for.\n\nI'm building [a GIS tool: one or two sentences on what it does and who it's for, e.g. \"a web app that turns drone survey data into ready-to-use maps for local councils\"].\n\nI'm looking for a developer to help build it, mainly [what you need, e.g. \"the geoprocessing pipeline with GDAL and PostGIS\"]. I'm open to a paid contract or a revenue share, and happy to talk about what works best for you.\n\nIf that sounds interesting, just reply and I'll send more details. And if not, no problem at all. Thanks for reading.\n\nBest regards,\n"
+    }
+  ],
+  "default_template": "default"
+}

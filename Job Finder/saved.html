@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Saved Jobs</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="saved.css">
+</head>
+<body>
+  <header class="s-header">
+    <div class="brand"><img src="icons/icon48.png" alt="" width="22" height="22"> <span>Saved jobs</span></div>
+    <div class="s-stats">
+      <div><span class="stat-label">Total</span><span id="statTotal" class="stat-value">–</span></div>
+      <div><span class="stat-label">Ready</span><span id="statReady" class="stat-value">–</span></div>
+      <div><span class="stat-label">Not ready</span><span id="statNotReady" class="stat-value">–</span></div>
+      <div><span class="stat-label">Applied</span><span id="statApplied" class="stat-value">–</span></div>
+    </div>
+    <div class="s-actions">
+      <button id="openDirBtn" class="secondary" type="button">Open folder</button>
+      <button id="refreshBtn" class="secondary" type="button">Refresh</button>
+      <button id="tailorMissingBtn" class="secondary" type="button" title="Make a resume for every saved job that doesn't have one yet">✨ Tailor missing</button>
+      <button id="addBtn" class="primary" type="button">+ Add job</button>
+    </div>
+  </header>
+
+  <section class="s-toolbar">
+    <input id="searchBox" type="search" placeholder="Search title, company, location, notes…" autocomplete="off">
+    <select id="statusFilter" aria-label="Filter by status">
+      <option value="">All statuses</option>
+      <option value="ready">Ready</option>
+      <option value="not-ready">Not ready</option>
+      <option value="applied">Applied</option>
+    </select>
+    <select id="sortBy" aria-label="Sort">
+      <option value="index-desc">Newest number first</option>
+      <option value="index-asc">Oldest number first</option>
+      <option value="lastSaved">Last updated</option>
+      <option value="company">Company A–Z</option>
+    </select>
+    <span id="message" class="s-message"></span>
+  </section>
+
+  <section id="folderSetup" class="s-folder" hidden>
+    <p><b>Where are your saved jobs?</b> Enter your save folder (the same one as in Settings).</p>
+    <form id="folderForm" class="s-folder-row">
+      <input id="folderInput" type="text" spellcheck="false" placeholder="D:\Resumes For Harrison">
+      <button type="submit" class="primary">Use this folder</button>
+    </form>
+  </section>
+
+  <main class="s-main">
+    <table class="s-table">
+      <thead>
+        <tr>
+          <th class="num">#</th>
+          <th>Status</th>
+          <th>Title</th>
+          <th>Company</th>
+          <th>Location</th>
+          <th>Source</th>
+          <th>Applied</th>
+          <th>Updated</th>
+          <th class="actions-col">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div id="empty" class="empty" hidden></div>
+  </main>
+
+  <dialog id="editDialog" class="s-dialog">
+    <form id="editForm" method="dialog">
+      <h2 id="dialogTitle">Edit job</h2>
+      <div class="grid">
+        <label>Title *<input id="fTitle" required></label>
+        <label>Company *<input id="fCompany" required></label>
+        <label>Location<input id="fLocation"></label>
+        <label>Source (job board)<input id="fVia" placeholder="LinkedIn, Indeed…"></label>
+        <label class="wide">Posting link<input id="fLink" type="url" placeholder="https://…"></label>
+        <label>Status
+          <select id="fStatus">
+            <option value="not-ready">Not ready</option>
+            <option value="ready">Ready</option>
+          </select>
+        </label>
+        <label>Applied on<input id="fApplied" type="date"></label>
+        <label class="wide">Notes<textarea id="fNotes" rows="3" placeholder="Contact, follow-up date, interview notes…"></textarea></label>
+        <label class="wide" id="descField">Job description<textarea id="fDescription" rows="6" placeholder="Paste the job description (used when tailoring the resume)"></textarea></label>
+      </div>
+      <p id="dialogError" class="s-error"></p>
+      <div class="dialog-actions">
+        <button type="button" id="cancelBtn" class="secondary">Cancel</button>
+        <button type="submit" id="saveJobBtn" class="primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="bridge-client.js"></script>
+  <script src="saved.js"></script>
+</body>
+</html>

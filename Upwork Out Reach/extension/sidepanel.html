@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Outreach Assistant</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">
+        <svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="4"/><path d="M2 21a8 8 0 0 1 11-7.4"/><circle cx="18" cy="18" r="3"/><path d="m22 22-1.8-1.8"/></svg>
+      </span>
+      <div>
+        <div class="brand-name">Outreach Assistant</div>
+        <div class="brand-sub">Research · Contacts · Drafting</div>
+      </div>
+      <button class="sync-pill" id="syncPill" type="button">Sync: checking…</button>
+    </div>
+    <p class="sync-warn hidden" id="syncWarn" role="status"></p>
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="run">Research</button>
+      <button class="tab" data-tab="contacts">Contacts <span class="count" id="contactCount">0</span></button>
+      <button class="tab" data-tab="settings">Settings</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ RESEARCH ============ -->
+    <section class="view active" id="view-run">
+      <div class="run-card">
+        <p class="run-hint" id="runHint">Open an Upwork talent search page, then press Start. Every freelancer is checked in the background for GitHub and Stack Overflow.</p>
+        <button class="btn primary block big" id="startBtn">
+          <svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>
+          Start
+        </button>
+        <label class="toggle" id="autoBox">
+          <input type="checkbox" id="autoPages" checked />
+          Keep going: when a page is done, open the next page and continue
+        </label>
+        <div id="progressBox" class="hidden">
+          <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="progress-meta">
+            <span id="progressText"></span>
+            <button class="link-btn" id="clearBtn">Clear</button>
+          </div>
+          <p class="hint hidden" id="runNotice"></p>
+        </div>
+      </div>
+
+      <label class="toggle hidden" id="filterBox">
+        <input type="checkbox" id="onlyAccounts" checked />
+        Only show freelancers with GitHub or Stack Overflow
+      </label>
+
+      <ul id="runList" class="cards"></ul>
+    </section>
+
+    <!-- ============ CONTACTS ============ -->
+    <section class="view" id="view-contacts">
+      <div class="row">
+        <input id="search" class="grow" placeholder="Search name, skill, email…" />
+        <select id="statusFilter"><option value="">All statuses</option></select>
+      </div>
+      <ul id="contactList" class="cards"></ul>
+      <button class="btn block" id="openAppBtn">Open Contacts app</button>
+      <button class="btn ghost block" id="exportBtn">Export contacts (JSON)</button>
+    </section>
+
+    <!-- ============ SETTINGS ============ -->
+    <section class="view" id="view-settings">
+      <label class="field"><span>Backend URL</span><input id="sBackend" placeholder="http://localhost:8787" /></label>
+      <label class="field"><span>Your name (signature)</span><input id="sSender" /></label>
+      <p class="hint">The email text comes from your template. Edit it in the Contacts app under Settings.</p>
+      <label class="field"><span>Profiles read at the same time (1–3, fewer = fewer human checks)</span><input id="sConcurrency" type="number" min="1" max="3" value="2" /></label>
+      <label class="toggle"><input type="checkbox" id="sSites" /> Search their websites &amp; portfolio pages for email, Telegram and phone</label>
+      <label class="field"><span>GitHub token (optional)</span><input id="sGhToken" type="password" placeholder="github_pat_… — no scopes needed" /></label>
+      <p class="hint">Without a token GitHub allows ~10 commit searches per minute.</p>
+      <button class="btn primary block" id="sSaveBtn">Save settings</button>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="insights.js"></script>
+  <script type="module" src="sidepanel.js"></script>
+</body>
+</html>

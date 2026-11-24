@@ -1,0 +1,47 @@
+/* Resume layout, matched to the PDF in template/ (style only, none of its content):
+   centered name, headline and contact lines; uppercase section headings with a full-width
+   rule; "Company ... dates" / "Title ... dates · location" rows; bullets with bold key
+   terms; an italic "Tools:" line under each job. Used by the preview, Print / PDF and the
+   saved resume.html. */
+.resume {
+  font-family: Calibri, Carlito, "Segoe UI", Arial, sans-serif;
+  font-size: 13.5px;
+  line-height: 1.3;
+  color: #111;
+  background: #fff;
+}
+.resume .r-head { text-align: center; margin: 0 0 10px; }
+.resume h1 { font-size: 29px; font-weight: 700; margin: 0 0 3px; letter-spacing: 0; }
+.resume .r-head p { margin: 1px 0; font-size: 13px; }
+.resume h2 {
+  font-size: 13.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin: 14px 0 5px;
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid #000;
+}
+.resume h3 { font-size: 13.5px; font-weight: 700; margin: 8px 0 1px; }
+.resume h3.row { font-weight: 400; margin-top: 9px; }
+.resume .row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.resume .row > :last-child { text-align: right; white-space: nowrap; flex: none; }
+.resume p.sub { margin: 0 0 2px; font-size: 12.5px; }
+.resume p.sub > :last-child { font-style: normal; }
+.resume p { margin: 2px 0; }
+.resume ul, .resume ol { margin: 2px 0 3px; padding-left: 38px; }
+.resume li { margin: 0 0 1px; padding-left: 4px; }
+.resume .tools { font-style: italic; font-size: 12.5px; margin: 2px 0 6px; }
+.resume strong { font-weight: 700; }
+.resume a { color: inherit; text-decoration: none; }
+.resume hr { border: 0; border-top: 1px solid #999; margin: 10px 0; }
+
+@page { size: letter; margin: 0.5in 0.55in; }
+@media print {
+  .resume h2, .resume h3 { break-after: avoid; }
+  .resume li { break-inside: avoid; }
+}
+
+/* Single-column job layout (### Title, then "Company — Location" and dates lines). */
+.resume h3:not(.row) { margin-bottom: 0; }
+.resume h3:not(.row) + p { margin-top: 1px; }

@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Job Finder bridge",
+      "detail": "Lets the Chrome extension tailor resumes with Claude Code",
+      "type": "shell",
+      "command": "node",
+      "args": ["bridge/server.js"],
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "reveal": "silent", "panel": "dedicated" },
+      "runOptions": { "runOn": "folderOpen" }
+    }
+  ]
+}

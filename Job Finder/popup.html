@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Universal Job Finder</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="icons/icon48.png" alt="" width="20" height="20">
+      <span>Universal Job Finder</span>
+    </div>
+    <div class="top-actions">
+      <button id="savedBtn" class="secondary saved-btn" title="See, add, edit and delete your saved jobs">&#128193; Saved jobs</button>
+      <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">&#9881;</button>
+    </div>
+  </header>
+
+  <form id="searchForm" class="search">
+    <input id="keywords" type="text" placeholder="Keywords, e.g. react developer" autocomplete="off" required>
+    <input id="location" type="text" placeholder="Location (optional)" autocomplete="off">
+    <select id="dateFilter" aria-label="Date posted" title="Searches for jobs posted in this period. Jobs without a posting date are hidden when a period is picked.">
+      <option value="">Any time</option>
+      <option value="1">Past 24 hours</option>
+      <option value="3">Past 3 days</option>
+      <option value="7">Past week</option>
+      <option value="30">Past month</option>
+    </select>
+    <label class="check"><input id="remote" type="checkbox"> Remote</label>
+    <button id="searchBtn" type="submit" class="primary">Search</button>
+  </form>
+
+  <section class="toolbar">
+    <div class="stats">
+      <div><span class="stat-label">Jobs</span><span id="statJobs" class="stat-value">0</span></div>
+      <div><span class="stat-label">Sources</span><span id="statSources" class="stat-value">0</span></div>
+      <div><span class="stat-label">Avg salary</span><span id="statSalary" class="stat-value">&ndash;</span></div>
+      <div id="statSavedBox" class="clickable" title="Open your saved jobs"><span class="stat-label">Saved jobs</span><span id="statSaved" class="stat-value">&ndash;</span></div>
+    </div>
+    <div class="filters">
+      <select id="sourceFilter" aria-label="Filter by job board">
+        <option value="">All boards</option>
+      </select>
+      <select id="sortBy" aria-label="Sort results">
+        <option value="match">Best match</option>
+        <option value="newest">Newest first</option>
+      </select>
+      <label class="range" title="Jobs without listed pay are always shown">
+        Min&nbsp;pay
+        <input id="minSalary" type="range" min="0" max="250000" step="10000" value="0">
+        <span id="minSalaryLabel">Any</span>
+      </label>
+    </div>
+  </section>
+
+  <main class="panes">
+    <div class="list-pane">
+      <div id="batchBar" class="batch-bar" hidden>
+        <span id="batchCount"></span>
+        <button id="batchClear" class="link-btn" type="button">Clear</button>
+        <button id="batchBtn" class="primary" type="button"></button>
+      </div>
+      <div id="savedNote" class="saved-note" hidden></div>
+      <div id="list" class="list" role="listbox" aria-label="Job results"></div>
+      <button id="tailorAllBtn" class="primary more" hidden>✨ Tailor all</button>
+      <button id="moreBtn" class="secondary more" hidden>Load more</button>
+    </div>
+    <div id="detail" class="detail"></div>
+  </main>
+
+  <script src="bridge-client.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

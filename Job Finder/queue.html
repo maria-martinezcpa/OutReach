@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tailor All</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="saved.css">
+  <link rel="stylesheet" href="queue.css">
+</head>
+<body>
+  <header class="s-header">
+    <div class="brand"><img src="icons/icon48.png" alt="" width="22" height="22"> <span>Tailor all</span></div>
+    <div class="s-stats">
+      <div><span class="stat-label">Total</span><span id="statTotal" class="stat-value">0</span></div>
+      <div><span class="stat-label">Waiting</span><span id="statWaiting" class="stat-value">0</span></div>
+      <div><span class="stat-label">Working</span><span id="statRunning" class="stat-value">0</span></div>
+      <div><span class="stat-label">Done</span><span id="statDone" class="stat-value">0</span></div>
+      <div><span class="stat-label">Failed</span><span id="statFailed" class="stat-value">0</span></div>
+    </div>
+    <div class="s-actions">
+      <button id="startBtn" class="primary" type="button">▶ Start</button>
+      <button id="pauseBtn" class="secondary" type="button" title="Finish the resumes in progress, then wait">⏸ Pause</button>
+      <button id="stopBtn" class="secondary danger-btn" type="button" title="Cancel the resumes in progress right away">⏹ Stop</button>
+    </div>
+  </header>
+
+  <section class="q-progress">
+    <div class="bar"><div id="bar" class="bar-fill"></div></div>
+    <span id="stateText" class="q-state"></span>
+  </section>
+
+  <section class="s-toolbar">
+    <div class="mode" role="radiogroup" aria-label="Tailoring style">
+      <label><input type="radio" name="mode" value="honest"> Honest</label>
+      <label><input type="radio" name="mode" value="demo"> High-impact</label>
+    </div>
+    <label class="q-parallel">At a time
+      <select id="parallel">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </label>
+    <button id="retryBtn" class="secondary" type="button">Retry failed</button>
+    <button id="clearBtn" class="secondary" type="button">Clear finished</button>
+    <button id="clearAllBtn" class="secondary" type="button">Clear all</button>
+    <span id="message" class="s-message"></span>
+  </section>
+
+  <main class="s-main">
+    <table class="s-table">
+      <thead>
+        <tr>
+          <th class="num">#</th>
+          <th>State</th>
+          <th>Title</th>
+          <th>Company</th>
+          <th>Details</th>
+          <th class="actions-col">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div id="empty" class="empty" hidden>Nothing queued. In the popup, search and click <b>✨ Tailor all</b>, or use <b>✨ Tailor missing</b> on the Saved jobs page.</div>
+  </main>
+
+  <!-- Each job is tailored by tailor.html running in one of these hidden frames. -->
+  <div id="workers" hidden></div>
+
+  <script src="bridge-client.js"></script>
+  <script src="queue.js"></script>
+</body>
+</html>

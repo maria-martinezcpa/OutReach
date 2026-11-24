@@ -1,0 +1,54 @@
+x-backend-env: &backend-env
+  DATABASE_URL: postgresql+psycopg://quora:${POSTGRES_PASSWORD:-quora}@db:5432/quora_discovery
+  CELERY_BROKER_URL: redis://redis:6379/0
+  CORS_ORIGINS: http://localhost:8080
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: quora
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-quora}
+      POSTGRES_DB: quora_discovery
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U quora -d quora_discovery"]
+      interval: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    env_file: .env
+    environment: *backend-env
+    depends_on:
+      db: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    ports:
+      - "8000:8000"
+
+  worker:
+    build: ./backend
+    command: celery -A app.tasks worker -B --loglevel=info --concurrency=2
+    env_file: .env
+    environment: *backend-env
+    depends_on:
+      db: { condition: service_healthy }
+      redis: { condition: service_healthy }
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+
+volumes:
+  pgdata:

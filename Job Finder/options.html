@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Universal Job Finder – Settings</title>
+  <link rel="stylesheet" href="popup.css">
+  <style>
+    body { width: auto; height: auto; display: block; padding: 32px 16px; }
+    .wrap { max-width: 640px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+    h1 { font-size: 18px; margin: 0 0 4px; display: flex; align-items: center; gap: 8px; }
+    h2 { font-size: 14px; margin: 26px 0 2px; padding-top: 18px; border-top: 1px solid var(--border); }
+    h2:first-of-type { border-top: 0; padding-top: 0; margin-top: 18px; }
+    p { color: var(--muted); margin: 0 0 6px; }
+    label { display: block; font-weight: 600; margin: 14px 0 4px; }
+    .hint { font-weight: 400; color: var(--muted); font-size: 12px; }
+    input[type="text"], input[type="password"], textarea {
+      width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg);
+    }
+    textarea { min-height: 260px; resize: vertical; font: 12px/1.5 ui-monospace, Consolas, monospace; }
+    .row { display: flex; gap: 12px; }
+    .row > div { flex: 1; }
+    .actions {
+      display: flex; align-items: center; gap: 12px; margin-top: 22px;
+      position: sticky; bottom: 0; background: var(--surface); padding: 10px 0;
+    }
+    #status { color: var(--good); }
+    a { color: var(--accent); }
+    code { font: 12px ui-monospace, Consolas, monospace; }
+    .dir-row { display: flex; gap: 8px; }
+    .dir-row input { flex: 1; }
+    .dir-status { margin: 6px 0 0; font-size: 12px; }
+    .dir-status.ok { color: var(--good); }
+    .dir-status.bad { color: var(--danger); }
+    label.inline { display: flex; align-items: center; gap: 6px; font-weight: 400; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1><img src="icons/icon48.png" alt="" width="24" height="24"> Settings</h1>
+
+    <form id="form">
+      <h2>Job search (SerpApi)</h2>
+      <p>Job results come from Google Jobs through <a href="https://serpapi.com/" target="_blank" rel="noopener">SerpApi</a>.
+        Their free plan includes a monthly allowance of searches; each Search or Load more uses one.</p>
+
+      <label for="apiKey">SerpApi key
+        <span class="hint">: get it from <a href="https://serpapi.com/manage-api-key" target="_blank" rel="noopener">serpapi.com/manage-api-key</a></span>
+      </label>
+      <input id="apiKey" type="password" autocomplete="off" spellcheck="false">
+
+      <div class="row">
+        <div>
+          <label for="gl">Country <span class="hint">(code, e.g. us, gb, ca, in)</span></label>
+          <input id="gl" type="text" maxlength="2">
+        </div>
+        <div>
+          <label for="hl">Language <span class="hint">(code, e.g. en, de, fr)</span></label>
+          <input id="hl" type="text" maxlength="5">
+        </div>
+      </div>
+
+      <h2>Resume tailoring (Claude)</h2>
+      <p>"Tailor resume" uses Claude Code from VS Code, with your Claude Code login. No API key needed.</p>
+
+      <label for="experienceYears">Total years of experience <span class="hint">(e.g. 8+; used as-is instead of being calculated from dates)</span></label>
+      <input id="experienceYears" type="text" maxlength="12" spellcheck="false" placeholder="8+">
+
+      <label for="resume">Master resume <span class="hint">: paste plain text or Markdown, or <a href="#" id="loadFile">load a .txt/.md file</a></span></label>
+      <input id="resumeFile" type="file" accept=".txt,.md,.markdown,text/plain,text/markdown" hidden>
+      <textarea id="resume" spellcheck="false" placeholder="# Jane Doe&#10;jane@example.com · github.com/jane&#10;&#10;## Experience&#10;..."></textarea>
+
+      <h2>Saving</h2>
+      <p>Each tailored resume is saved with its job description and details in its own subfolder:
+        <code>Resume - Company - Role.md</code>, <code>Resume - Company - Role.html</code>, <code>Resume - Company - Role.pdf</code>, <code>job-description.md</code>, <code>job.json</code> and <code>analysis.json</code>.
+        Resumes you mark <b>Ready to apply</b> go in a <code>Ready</code> folder; the rest stay in <code>Not ready</code>.</p>
+
+      <label for="saveDir">Save folder <span class="hint">(full path, e.g. D:\Resumes; created if it doesn't exist)</span></label>
+      <div class="dir-row">
+        <input id="saveDir" type="text" spellcheck="false" placeholder="D:\Resumes">
+        <button type="button" id="testDirBtn" class="secondary">Test folder</button>
+      </div>
+      <p id="dirStatus" class="dir-status"></p>
+      <p><a href="saved.html" target="_blank">Open your saved jobs →</a></p>
+      <label class="inline"><input id="autoSave" type="checkbox"> Save automatically after each tailored resume and edit</label>
+
+      <div class="actions">
+        <button type="submit" class="primary">Save</button>
+        <label style="margin:0;font-weight:400"><input id="show" type="checkbox"> Show key</label>
+        <span id="status"></span>
+      </div>
+    </form>
+  </div>
+  <script src="bridge-client.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

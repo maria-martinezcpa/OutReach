@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Upwork Outreach Assistant",
+  "version": "0.6.2",
+  "description": "Freelancer research, GitHub / Stack Overflow insights and collaboration email drafting.",
+  "permissions": [
+    "sidePanel",
+    "alarms",
+    "storage",
+    "unlimitedStorage",
+    "scripting",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.upwork.com/*",
+    "https://api.github.com/*",
+    "https://github.com/*",
+    "https://patch-diff.githubusercontent.com/*",
+    "https://api.stackexchange.com/*",
+    "https://stackoverflow.com/*",
+    "http://localhost:8787/*",
+    "http://127.0.0.1:8787/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.upwork.com/*"
+      ],
+      "js": [
+        "capture.js",
+        "insights.js",
+        "upwork-content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Open Outreach Assistant"
+  },
+  "optional_host_permissions": [
+    "<all_urls>"
+  ]
+}

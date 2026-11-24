@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tailored Resume</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="tailor.css">
+  <link rel="stylesheet" href="resume-template.css">
+</head>
+<body>
+  <header class="t-header no-print">
+    <div class="t-job">
+      <div class="brand"><img src="icons/icon48.png" alt="" width="20" height="20"> Tailored resume for</div>
+      <h1 id="jobTitle">…</h1>
+      <div id="jobMeta" class="t-meta"></div>
+    </div>
+    <div class="t-actions">
+      <span id="saveStatus" class="save-status"></span>
+      <label class="ready-toggle" title="Ready resumes are saved in the Ready folder; the rest in Not ready">
+        <input id="readyToggle" type="checkbox"> Ready to apply
+      </label>
+      <div class="seg" role="tablist">
+        <button id="viewPreview" class="active" role="tab">Preview</button>
+        <button id="viewEdit" role="tab">Edit</button>
+      </div>
+      <button id="copyBtn" class="secondary" disabled>Copy</button>
+      <button id="downloadBtn" class="secondary" disabled>Download .md</button>
+      <button id="pdfBtn" class="secondary" disabled title="Save Resume - Company - Role.pdf to the job's folder and open it">Save PDF</button>
+      <button id="printBtn" class="secondary" disabled>Print</button>
+      <button id="saveBtn" class="secondary" disabled title="Save the resume and job description to your folder (set in Settings)">Save to folder</button>
+      <button id="askBtn" class="primary" disabled>Regenerate</button>
+    </div>
+  </header>
+
+  <main class="t-main">
+    <div id="status" class="t-status no-print"></div>
+
+    <section id="steps" class="steps no-print" hidden>
+      <div id="stepOpen" class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h2>Generate with Claude Code</h2>
+          <p>Claude Code (from VS Code) writes the tailored resume, using your Claude Code login. It takes about a minute.</p>
+          <p id="bridgeStatus" class="bridge-status">Checking Claude Code…</p>
+          <div class="mode" role="radiogroup" aria-label="Tailoring style">
+            <label><input type="radio" name="mode" value="honest" checked> <b>Honest</b>: only claims your resume supports</label>
+            <label><input type="radio" name="mode" value="demo"> <b>High-impact</b>: bolder wording and numbers</label>
+          </div>
+          <div class="step-actions">
+            <button id="generateBtn" class="primary">✨ Generate with Claude Code</button>
+            <button id="copyPromptBtn" class="secondary">Copy prompt</button>
+          </div>
+        </div>
+      </div>
+      <div id="stepPaste" class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h2>Or paste a reply yourself</h2>
+          <p>Manual fallback: click <b>Copy prompt</b>, give it to Claude anywhere (for example the Claude Code panel in VS Code), and paste the JSON reply below.</p>
+          <textarea id="pasteBox" class="t-paste" spellcheck="false" placeholder="Paste Claude's reply here (Ctrl+V)"></textarea>
+          <div class="step-actions">
+            <button id="useReplyBtn" class="secondary">Use this text</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="analysis" class="analysis no-print" hidden></section>
+
+    <article id="preview" class="resume" hidden></article>
+    <textarea id="editor" class="t-editor no-print" spellcheck="false" hidden></textarea>
+  </main>
+
+  <script src="bridge-client.js"></script>
+  <script src="tailor.js"></script>
+</body>
+</html>

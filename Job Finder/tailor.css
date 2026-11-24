@@ -1,0 +1,182 @@
+body { width: auto; height: auto; min-height: 100vh; display: block; }
+
+.t-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 14px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.t-job .brand { font-weight: 400; color: var(--muted); font-size: 12px; }
+.t-job h1 { margin: 2px 0; font-size: 18px; }
+.t-meta { color: var(--muted); }
+.t-meta a { color: var(--accent); }
+.t-actions { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.t-actions button:disabled { opacity: .5; cursor: default; }
+
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-right: 6px; }
+.seg button { border: 0; background: var(--surface); padding: 6px 12px; cursor: pointer; }
+.seg button.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+
+.t-main { max-width: 860px; margin: 24px auto; padding: 0 16px; }
+.t-status:empty { display: none; }
+.t-status { padding: 40px 10px; }
+.t-status .empty { gap: 12px; }
+
+.t-editor {
+  width: 100%;
+  min-height: 75vh;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  font: 13px/1.55 ui-monospace, Consolas, monospace;
+  resize: vertical;
+}
+
+
+@media print {
+  .no-print, .t-header { display: none !important; }
+  body { background: #fff; color: #000; }
+  .t-main { margin: 0; max-width: none; padding: 0; }
+  .resume { border: 0; padding: 0; background: #fff; color: #000; }
+  .resume a { color: #000; text-decoration: none; }
+  .resume h2 { border-color: #999; }
+}
+
+/* Two-step "Ask Claude" flow */
+.steps { display: flex; flex-direction: column; gap: 12px; }
+.step {
+  display: flex;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.step.current { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.step-num {
+  flex: none;
+  width: 28px; height: 28px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+.step.done .step-num { background: var(--good); color: #fff; }
+.step.done .step-num { font-size: 0; }
+.step.done .step-num::after { content: "✓"; font-size: 14px; }
+.step-body { flex: 1; min-width: 0; }
+.step-body h2 { margin: 2px 0 4px; font-size: 15px; }
+.step-body p { margin: 0 0 10px; color: var(--muted); }
+.step-actions { display: flex; gap: 8px; margin-top: 8px; }
+.t-paste {
+  width: 100%;
+  min-height: 140px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  font: 12px/1.5 ui-monospace, Consolas, monospace;
+  resize: vertical;
+}
+kbd {
+  padding: 0 5px;
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  font: 11px ui-monospace, Consolas, monospace;
+  background: var(--surface-2);
+}
+
+/* Skills analysis panel */
+.analysis {
+  margin-bottom: 16px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.analysis h2 { margin: 0 0 4px; font-size: 15px; }
+.analysis ul { margin: 4px 0; padding: 0; list-style: none; }
+.analysis .inferred li { padding: 4px 0; border-bottom: 1px dashed var(--border); }
+.analysis .inferred li:last-child { border-bottom: 0; }
+.analysis .inferred label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.analysis .cat { font-size: 11px; color: var(--muted); border: 1px solid var(--border); border-radius: 10px; padding: 0 6px; }
+.analysis .evidence { margin-left: 24px; font-size: 12px; color: var(--muted); }
+.analysis .gaps li { padding: 2px 0; color: var(--muted); }
+.analysis .gaps b { color: var(--text); }
+.analysis .muted { color: var(--muted); margin: 6px 0 0; }
+.analysis .small { font-size: 11px; }
+.analysis .warn {
+  margin: 8px 0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--danger) 12%, transparent);
+  color: var(--danger);
+}
+
+/* Honest / exaggerated mode switch */
+.mode { display: flex; flex-direction: column; gap: 4px; margin: 0 0 10px; }
+.mode label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+
+/* High-impact mode: audit table, collapsed behind "Show AI changes" */
+.analysis.collapsed { padding: 0; border: 0; background: none; text-align: right; }
+.reveal-btn { font-size: 12px; color: var(--muted); }
+.exag-wrap { overflow-x: auto; margin: 8px 0 4px; }
+.exag { width: 100%; border-collapse: collapse; font-size: 12px; }
+.exag th, .exag td { padding: 6px 8px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+.exag th { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.exag .orig { color: var(--muted); }
+.exag .risk { color: var(--danger); }
+.exag .tech { white-space: nowrap; padding: 1px 6px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--border); }
+.analysis .evidence.none { color: var(--danger); }
+
+/* Claude Code bridge status */
+.bridge-status { font-size: 12px; margin: -4px 0 10px; }
+.bridge-status.ok { color: var(--good); }
+.bridge-status.bad { color: var(--danger); }
+
+.bridge-status code, .t-status code {
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font: 12px ui-monospace, Consolas, monospace;
+  color: var(--text);
+  user-select: all;
+}
+.t-status .link-btn, .bridge-status .link-btn { font-size: 12px; }
+
+/* Save-to-folder status in the header */
+.save-status { font-size: 12px; color: var(--muted); margin-right: 4px; }
+.save-status.ok { color: var(--good); }
+.save-status.bad { color: var(--danger); }
+.save-status .link-btn { font-size: 12px; }
+
+/* Ready to apply switch */
+.ready-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  cursor: pointer;
+  font-weight: 500;
+}
+.ready-toggle input { accent-color: var(--good); }
+.ready-toggle:has(input:checked) { border-color: var(--good); color: var(--good); background: color-mix(in srgb, var(--good) 10%, var(--surface)); }
+
+/* Preview frame for the template layout (typography is in resume-template.css) */
+.resume { background: #fff; color: #111; padding: 0.5in 0.55in; border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+.resume code { font-family: ui-monospace, Consolas, monospace; font-size: 12px; }
+@media print { .resume { box-shadow: none; padding: 0; } }

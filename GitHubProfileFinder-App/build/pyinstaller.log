@@ -1,0 +1,126 @@
+353 INFO: PyInstaller: 6.22.3, contrib hooks: 2026.7
+353 INFO: Python: 3.12.10
+378 INFO: Platform: Windows-11-10.0.26200-SP0
+378 INFO: Python environment: D:\working\Projects\GitHubProfileFinder-App\backend\venv
+379 INFO: wrote D:/working/Projects/GitHubProfileFinder-App/build\GitHubProfileFinder.spec
+383 INFO: Removing temporary files and cleaning cache in C:\Users\Administrator\AppData\Local\pyinstaller
+1880 INFO: Module search paths (PYTHONPATH):
+['D:\\working\\Projects\\GitHubProfileFinder-App\\backend',
+ 'C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python312.zip',
+ 'C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\DLLs',
+ 'C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Lib',
+ 'C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312',
+ 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv',
+ 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages',
+ 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend']
+2314 INFO: Appending 'datas' from .spec
+2336 INFO: checking Analysis
+2336 INFO: Building Analysis because Analysis-00.toc is non existent
+2336 INFO: Looking for Python shared library...
+2339 INFO: Using Python shared library: C:\Users\Administrator\AppData\Local\Programs\Python\Python312\python312.dll
+2339 INFO: Running Analysis Analysis-00.toc
+2339 INFO: Target bytecode optimization level: 0
+2339 INFO: Initializing module dependency graph...
+2340 INFO: Initializing module graph hook caches...
+2371 INFO: Analyzing modules for base_library.zip ...
+3458 INFO: Processing standard module hook 'hook-encodings.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+3786 INFO: Processing standard module hook 'hook-math.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+4745 INFO: Processing standard module hook 'hook-pickle.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+5761 INFO: Processing standard module hook 'hook-heapq.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+6170 INFO: Caching module dependency graph...
+6209 INFO: Analyzing D:\working\Projects\GitHubProfileFinder-App\backend\desktop.py
+6262 INFO: Processing standard module hook 'hook-uvicorn.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+7026 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+7188 INFO: Processing standard module hook 'hook-xml.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+7439 INFO: Processing standard module hook 'hook-_ctypes.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+7984 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+7992 INFO: SetuptoolsInfo: initializing cached setuptools info...
+9195 INFO: Processing standard module hook 'hook-platform.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+9481 INFO: Processing standard module hook 'hook-difflib.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+9597 INFO: Processing standard module hook 'hook-webbrowser.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+9824 INFO: Processing standard module hook 'hook-websockets.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+10735 INFO: Processing standard module hook 'hook-anyio.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+11503 INFO: Processing standard module hook 'hook-webview.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\webview\\__pyinstaller'
+12091 INFO: Processing pre-safe-import-module hook 'hook-gi.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+12237 INFO: Processing standard module hook 'hook-clr.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\pythonnet\\_pyinstaller'
+12339 INFO: Processing standard module hook 'hook-clr_loader.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+12497 INFO: Processing standard module hook 'hook-pycparser.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+12663 INFO: Processing standard module hook 'hook-setuptools.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+12704 INFO: Processing pre-safe-import-module hook 'hook-distutils.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+12768 INFO: Processing standard module hook 'hook-sysconfig.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+12773 INFO: Processing pre-safe-import-module hook 'hook-jaraco.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+12773 INFO: Setuptools: 'jaraco' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.jaraco'!
+12783 INFO: Processing pre-safe-import-module hook 'hook-more_itertools.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+12784 INFO: Setuptools: 'more_itertools' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.more_itertools'!
+12913 INFO: Processing standard module hook 'hook-_osx_support.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+12929 INFO: Processing pre-safe-import-module hook 'hook-packaging.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+13183 INFO: Processing standard module hook 'hook-setuptools._vendor.jaraco.text.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+13186 INFO: Processing pre-safe-import-module hook 'hook-importlib_resources.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+13208 INFO: Processing pre-safe-import-module hook 'hook-backports.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+13208 INFO: Setuptools: 'backports' appears to be a full setuptools-vendored copy - creating alias to 'setuptools._vendor.backports'!
+13719 INFO: Processing pre-safe-import-module hook 'hook-tomli.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+13721 INFO: Setuptools: 'tomli' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.tomli'!
+14258 INFO: Processing pre-safe-import-module hook 'hook-wheel.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+14258 INFO: Setuptools: 'wheel' appears to be a setuptools-vendored copy - creating alias to 'setuptools._vendor.wheel'!
+14711 INFO: Processing standard module hook 'hook-xml.etree.cElementTree.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+14824 INFO: Processing standard module hook 'hook-cryptography.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+15996 INFO: hook-cryptography: cryptography does not seem to be using dynamically linked OpenSSL.
+16680 INFO: Processing standard module hook 'hook-pydantic.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+17905 INFO: Processing standard module hook 'hook-zoneinfo.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+19697 INFO: Processing standard module hook 'hook-certifi.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+20007 INFO: Processing standard module hook 'hook-pygments.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks'
+21078 INFO: Processing standard module hook 'hook-pycountry.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+21874 INFO: Analyzing hidden import 'uvicorn.__main__'
+21874 INFO: Analyzing hidden import 'uvicorn.lifespan'
+21875 INFO: Analyzing hidden import 'uvicorn.lifespan.off'
+21876 INFO: Analyzing hidden import 'uvicorn.lifespan.on'
+21887 INFO: Analyzing hidden import 'uvicorn.loops'
+21888 INFO: Analyzing hidden import 'uvicorn.loops.asyncio'
+21889 INFO: Analyzing hidden import 'uvicorn.loops.auto'
+21890 INFO: Analyzing hidden import 'uvicorn.loops.zuvloop'
+21891 INFO: Analyzing hidden import 'uvicorn.protocols.http.auto'
+21891 INFO: Analyzing hidden import 'uvicorn.protocols.websockets.auto'
+21892 INFO: Analyzing hidden import 'uvicorn.workers'
+21897 INFO: Processing module hooks (post-graph stage)...
+22066 WARNING: Hidden import "pycparser.lextab" not found!
+22066 WARNING: Hidden import "pycparser.yacctab" not found!
+22403 WARNING: Hidden import "tzdata" not found!
+24474 INFO: Performing binary vs. data reclassification (761 entries)
+24985 INFO: Looking for ctypes DLLs
+25023 INFO: Analyzing run-time hooks ...
+25028 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+25030 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+25034 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+25036 INFO: Including run-time hook 'pyi_rth_setuptools.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+25037 INFO: Including run-time hook 'pyi_rth_cryptography_openssl.py' from 'D:\\working\\Projects\\GitHubProfileFinder-App\\backend\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks'
+25072 INFO: Creating base_library.zip...
+25327 INFO: Looking for dynamic libraries
+28291 INFO: Extra DLL search directories (AddDllDirectory): []
+28291 INFO: Extra DLL search directories (PATH): []
+29157 INFO: Warnings written to D:\working\Projects\GitHubProfileFinder-App\build\pyinstaller\GitHubProfileFinder\warn-GitHubProfileFinder.txt
+29274 INFO: Graph cross-reference written to D:\working\Projects\GitHubProfileFinder-App\build\pyinstaller\GitHubProfileFinder\xref-GitHubProfileFinder.html
+29344 INFO: checking PYZ
+29344 INFO: Building PYZ because PYZ-00.toc is non existent
+29344 INFO: Building PYZ (ZlibArchive) D:\working\Projects\GitHubProfileFinder-App\build\pyinstaller\GitHubProfileFinder\PYZ-00.pyz
+30290 INFO: Building PYZ (ZlibArchive) D:\working\Projects\GitHubProfileFinder-App\build\pyinstaller\GitHubProfileFinder\PYZ-00.pyz completed successfully.
+30689 INFO: checking PKG
+30689 INFO: Building PKG because PKG-00.toc is non existent
+30689 INFO: Building PKG (CArchive) GitHubProfileFinder.pkg
+30722 INFO: Building PKG (CArchive) GitHubProfileFinder.pkg completed successfully.
+30723 INFO: Bootloader D:\working\Projects\GitHubProfileFinder-App\backend\venv\Lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\runw.exe
+30723 INFO: checking EXE
+30724 INFO: Building EXE because EXE-00.toc is non existent
+30724 INFO: Building EXE from EXE-00.toc
+30724 INFO: Copying bootloader EXE to D:\working\Projects\GitHubProfileFinder-App\build\pyinstaller\GitHubProfileFinder\GitHubProfileFinder.exe
+30737 INFO: Copying icon to EXE
+30739 WARNING: Execution of 'CopyIcons' failed on attempt #1 / 20: error(32, 'EndUpdateResourceW', 'The process cannot access the file because it is being used by another process.'). Retrying in 0.05 second(s)...
+30795 INFO: Copying 0 resources to EXE
+30795 INFO: Embedding manifest in EXE
+30797 INFO: Appending PKG archive to EXE
+30804 INFO: Fixing EXE headers
+30878 INFO: Building EXE from EXE-00.toc completed successfully.
+30886 INFO: checking COLLECT
+30886 INFO: Building COLLECT because COLLECT-00.toc is non existent
+30886 INFO: Building COLLECT COLLECT-00.toc
+32026 INFO: Building COLLECT COLLECT-00.toc completed successfully.
+32042 INFO: Build complete! The results are available in: D:\working\Projects\GitHubProfileFinder-App\build\dist-tmp

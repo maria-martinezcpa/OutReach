@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Outreach Contacts</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">✉</span>
+      <div>
+        <div class="title">Outreach Contacts</div>
+        <div class="meta" id="countLine">Loading…</div>
+      </div>
+    </div>
+    <div class="searchbox">
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input id="search" type="search" autocomplete="off" spellcheck="false"
+        placeholder="Search everything… try  react has:phone -emailed" aria-label="Search contacts" />
+      <kbd class="search-kbd" title="Press / to search">/</kbd>
+      <details class="search-help">
+        <summary title="Search tips">?</summary>
+        <div class="help-pop">
+          <p>Words are combined: <code>react node</code> finds contacts matching both.</p>
+          <table>
+            <tr><td><code>"full stack"</code></td><td>exact phrase</td></tr>
+            <tr><td><code>-wordpress</code></td><td>exclude</td></tr>
+            <tr><td><code>skill:react</code></td><td>in Upwork skills</td></tr>
+            <tr><td><code>lang:python</code></td><td>GitHub languages</td></tr>
+            <tr><td><code>loc:germany</code></td><td>location</td></tr>
+            <tr><td><code>name:</code> <code>title:</code> <code>email:</code> <code>note:</code> <code>source:slack</code></td><td>other fields</td></tr>
+            <tr><td><code>has:phone</code></td><td>email, phone, telegram, whatsapp, x, website, github, so, linkedin, upwork</td></tr>
+            <tr><td><code>is:emailed</code></td><td>also <code>is:unemailed</code>, <code>is:active</code>, <code>is:imported</code>, or any status</td></tr>
+          </table>
+          <p>Keys: <kbd>/</kbd> search · <kbd>↑</kbd><kbd>↓</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> clear</p>
+        </div>
+      </details>
+    </div>
+    <div class="tools">
+      <button class="btn" id="findBtn" title="Search GitHub for contacts that have no email yet">Find emails<span class="badge" id="findBadge" hidden></span></button>
+      <button class="btn" id="ghBtn" title="Find contact details from a GitHub profile link">GitHub lookup</button>
+      <button class="btn primary" id="addBtn">+ Add contacts</button>
+      <label class="btn ghost" title="Import contacts exported from the extension">
+        Import JSON<input id="importFile" type="file" accept="application/json,.json" hidden />
+      </label>
+      <button class="btn ghost" id="settingsBtn">Settings</button>
+    </div>
+  </header>
+
+  <p class="offline-banner" id="offlineBanner" role="status" hidden>
+    The backend has stopped, so this page isn't updating. Start UpworkOutreach.exe again.
+  </p>
+
+  <div class="filterbar">
+    <div class="chips" id="chips"></div>
+    <div class="filter-tools">
+      <select id="statusFilter" aria-label="Status"><option value="">All statuses</option></select>
+      <select id="sortSel" aria-label="Sort">
+        <option value="best">Sort: best match</option>
+        <option value="updated">Sort: recently updated</option>
+        <option value="added">Sort: recently added</option>
+        <option value="activity">Sort: latest GitHub commit</option>
+        <option value="name">Sort: name A–Z</option>
+      </select>
+      <button class="link-btn" id="clearFilters" hidden>Clear filters</button>
+    </div>
+  </div>
+
+  <main class="layout">
+    <aside class="list-pane">
+      <ul id="contactList" class="list" role="listbox" aria-label="Contacts"></ul>
+      <div class="empty" id="emptyList" hidden></div>
+    </aside>
+    <section class="detail-pane" id="detail">
+      <p class="empty">Select a contact to see their details and send an email.</p>
+    </section>
+  </main>
+
+  <!-- Add contacts from any pasted text -->
+  <dialog id="addDlg" class="wide">
+    <div class="dlg">
+      <h2>Add contacts</h2>
+      <p class="meta">Paste anything: Slack messages, a list, an email signature or rows from a spreadsheet (CSV with a header works too).
+        Names, emails, phone numbers, Telegram / WhatsApp / X handles and links are picked out. You can check everything before it's saved.</p>
+      <textarea id="pasteText" rows="9" placeholder="Jane Doe — jane@example.com, +44 7700 900123, telegram @janedoe&#10;https://github.com/janedoe&#10;&#10;John Smith&#10;john.smith@example.org"></textarea>
+      <div class="row">
+        <label class="field inline"><span>Source</span><input id="pasteSource" value="Slack" /></label>
+        <span class="grow"></span>
+        <button class="btn" id="parseBtn" type="button">Find contacts</button>
+      </div>
+      <div id="previewBox" hidden>
+        <div class="preview-head">
+          <strong id="previewTitle"></strong>
+          <label class="meta"><input type="checkbox" id="previewAll" checked /> Select all</label>
+        </div>
+        <ul class="preview" id="previewList"></ul>
+      </div>
+      <div class="actions">
+        <span class="grow"></span>
+        <button class="btn ghost" type="button" id="addCancel">Cancel</button>
+        <button class="btn primary" type="button" id="addSave" disabled>Add contacts</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Find contact details from a GitHub link (same method as the extension uses on Upwork) -->
+  <dialog id="ghDlg" class="wide">
+    <div class="dlg">
+      <h2>GitHub lookup</h2>
+      <p class="meta">Paste a GitHub profile link. Its profile, README, the email on their own commits and the websites they link
+        are searched, the same way the extension researches GitHub accounts found on Upwork.</p>
+      <div class="row">
+        <input class="grow" id="ghUrl" placeholder="https://github.com/username" autocomplete="off" spellcheck="false" />
+        <button class="btn primary" id="ghFind" type="button">Search</button>
+      </div>
+      <div class="gh-progress" id="ghProgress" hidden><span class="spinner"></span><span id="ghProgressText">Searching GitHub…</span></div>
+      <div id="ghResult" hidden></div>
+      <div class="actions">
+        <span class="meta grow" id="ghNote"></span>
+        <button class="btn ghost" type="button" id="ghCancel">Close</button>
+        <button class="btn primary" type="button" id="ghSave" disabled>Save contact</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Find emails for every contact that has none (runs on the backend, keeps going if this closes) -->
+  <dialog id="findDlg">
+    <div class="dlg">
+      <h2>Find missing emails</h2>
+      <p class="meta" id="findIntro"></p>
+      <div class="find-stats" id="findStats"></div>
+      <div class="progress" id="findProgress" hidden><div class="progress-bar" id="findBar"></div></div>
+      <p class="find-now meta" id="findNow"></p>
+      <label class="meta find-recheck"><input type="checkbox" id="findRecheck" /> Also search again contacts checked in the last 30 days</label>
+      <div class="actions">
+        <span class="meta grow" id="findNote"></span>
+        <button class="btn ghost" type="button" id="findClose">Close</button>
+        <button class="btn" type="button" id="findStop" hidden>Stop</button>
+        <button class="btn primary" type="button" id="findStart">Start</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Edit name / title / location -->
+  <dialog id="editDlg">
+    <form method="dialog" class="dlg">
+      <h2>Edit contact</h2>
+      <label class="field"><span>Name</span><input id="eName" required /></label>
+      <label class="field"><span>Title</span><input id="eTitle" /></label>
+      <label class="field"><span>Location</span><input id="eLocation" /></label>
+      <div class="actions">
+        <span class="grow"></span>
+        <button class="btn ghost" value="cancel" formnovalidate>Cancel</button>
+        <button class="btn primary" id="eSave" value="save">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="settingsDlg">
+    <form method="dialog" class="dlg">
+      <h2>Email template</h2>
+      <label class="field"><span>Your name (signature)</span><input id="sSender" /></label>
+      <label class="field"><span>Subject</span><input id="sSubject" /></label>
+      <label class="field"><span>Email text</span><textarea id="sBody" rows="14"></textarea></label>
+      <p class="meta">Sent exactly as written. Placeholders: <code>{first_name}</code> <code>{name}</code> <code>{title}</code> <code>{sender}</code></p>
+      <label class="field"><span>GitHub token (optional, for GitHub lookup)</span><input id="sGithubToken" type="password" autocomplete="off" placeholder="ghp_… or github_pat_…" /></label>
+      <p class="meta">Without a token GitHub allows about 10 lookups an hour. A token with no permissions raises that to hundreds.</p>
+      <div class="actions">
+        <button class="btn ghost" type="button" id="sReset">Reset to default</button>
+        <span class="grow"></span>
+        <button class="btn ghost" value="cancel">Cancel</button>
+        <button class="btn primary" id="sSave" value="save">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" hidden></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

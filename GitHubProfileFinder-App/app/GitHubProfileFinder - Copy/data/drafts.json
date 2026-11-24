@@ -1,0 +1,31 @@
+{
+  "app": "gmail",
+  "custom_url": "",
+  "signature": "",
+  "sender_email": "mariamartinezcpa@gmail.com",
+  "sender_provider": "gmail",
+  "gmail_link": "https://mail.google.com/mail/",
+  "outlook_link": "https://outlook.live.com/mail/0/",
+  "outlook_work_link": "https://outlook.office.com/mail/",
+  "templates": [
+    {
+      "id": "default",
+      "name": "Default",
+      "subject": "What Can I Do For You!",
+      "body": "Hi. Is this {first_name}?\n\nIf so, please reach out to me. I have something to tell you!\nIt's a very important thing for you.\n\nBest,"
+    },
+    {
+      "id": "bim_tool",
+      "name": "BIM modeler",
+      "subject": "Supporting Strong Professional Relationships",
+      "body": "Hi {first_name},\n\nI came across your GitHub profile and your work on {repo}. Your experience with Professor is exactly the kind of background I'm looking for.\n\nI'm a BIM modeler, but I want to build a constant relationship with you in a great manner.\n\nI'm looking for an architect who has professional skills and roles for BIM, mainly the Revit API integration and IFC export.\nI really want to support each other in getting a job and building it together. I'm open to a paid contract or a revenue share, and happy to talk about what works best for you.\n\nIf that sounds interesting, just reply and I'll send more details. And if not, no problem at all. Thanks for reading.\n\nBest regards,\nHarrison\n"
+    },
+    {
+      "id": "gis_tool",
+      "name": "GIS developer",
+      "subject": "Potential Relationships in Great Manner",
+      "body": "Hi {first_name},\n\nI came across your GitHub profile and your work on {repo}. Your experience with Python and GIS caught my attention, and I thought it would be worth reaching out.\n\nI’m a GIS developer myself, and I’m currently looking to strengthen my GIS engineering skills while also building relationships with other developers in the field. I’m open to different ways of working together, whether that’s a paid arrangement, project-based collaboration, or even a revenue-sharing model if we find a good opportunity to build something together.\n\nIf this sounds interesting to you, I’d be happy to share more about my background and what I have in mind. And if it’s not something you’re looking for, no worries at all.\n\nBest regards,\nHarrison"
+    }
+  ],
+  "default_template": "default"
+}
